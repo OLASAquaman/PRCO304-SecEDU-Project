@@ -1,0 +1,108 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  /*Here is where the font for the text is set to Arial. */
+
+  :root {
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 144;
+  }
+
+  /*Above is the colours for the right and wrong backgrounds */
+  
+  body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue), 100%, 20%);
+  }
+  
+  body.correct {
+    --hue: var(--hue-correct);
+  }
+  
+  body.wrong {
+    --hue: var(--hue-wrong);
+  }
+  
+  /*Above, this links to the :root from earlier*/
+
+  .container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 6px;
+    padding: 11px;
+    box-shadow: 0 0 10px 1px;
+  }
+
+  /*Above creates the background for the questions and answers (the white background)*/
+  
+  .btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+  }
+  /*The code above styles the buttons and makes them spaced out, rather than close together and all cramped */
+  
+  .btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 35%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 6px;
+    padding: 5px 11px;
+    color: white;
+    outline: none;
+  }
+  
+  .btn:hover {
+    border-color: black;
+  }
+  /* Above is the border colour which changes when the mouse hovers over the button, it outlines it black. */
+
+  .btn.correct {
+    --hue: var(--hue-correct);
+    color: black;
+  }
+  /*This uses the variable --hue-correct which styles it green for the correct answer, but as its hard to read off the background so
+  the colour was changed to black text to make it easier to read */
+
+  .btn.wrong {
+    --hue: var(--hue-wrong);
+  }
+  /*This uses the variable --hue-wrong which styles it red for the wrong answer */  
+
+  .start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 11px 20px;
+  }
+  /*This is the start button and the next button's CSS it makes them stand out from the background and easy to see */
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hide {
+    display: none;
+  }
+
+
+  /* This was a test for the styling of the images. 
+  .qImg {
+    width: 100px;
+    height: 100px;
+  }
+  */
+  
+  /*Inspiration was gathered from the web, and Web Dev Simplified who helped get the styling correct */
